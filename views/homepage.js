@@ -32,8 +32,10 @@ module.exports = function(kittens = []) {
       </body>
       <script>
         const form = document.getElementById('post-mew-kitten')
+        <!-- const button = document.getElementById('submit-button') -->
         form.onsubmit = async event => {
           event.preventDefault()
+          console.log('WHERE AM I RUNNING?')
           await fetch('/kittens', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
