@@ -1,0 +1,31 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+}
