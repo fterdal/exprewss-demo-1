@@ -12,9 +12,9 @@ module.exports = function(kittens = []) {
       <body>
         <div class="centered-container">
           <h1>Kitten Store</h1>
-          <form>
-            <label for="cat-name">Add Kitten</label>
-            <input name="cat-name" type="text" />
+          <form id="post-mew-kitten" method="POST" action="/kittens">
+            <label for="name">Add Kitten</label>
+            <input name="name" type="text" />
             <button type="submit">Submit</button>
           </form>
           <ul>
@@ -30,6 +30,19 @@ module.exports = function(kittens = []) {
           </ul>
         </div>
       </body>
+      <script>
+        const form = document.getElementById('post-mew-kitten')
+        form.onsubmit = event => {
+          event.preventDefault()
+          fetch('/kittens', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: event.target[0].value,
+            }),
+          })
+        }
+      </script>
     </html>
   `
 }
