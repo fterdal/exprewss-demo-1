@@ -27,11 +27,6 @@ app.get('/kittens', (req, res, next) => {
   res.send(kittens)
 })
 
-/*
-Paste this in the browser dev tools' console:
-fetch('/kittens', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({name: 'Collin'}) })
-*/
-
 app.post('/kittens', (req, res, next) => {
   kittens.push({
     id: nextId(kittens),
