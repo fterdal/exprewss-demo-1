@@ -23,7 +23,7 @@ module.exports = function(kittens = []) {
                 html`
               <li>
                 <p>${kitten.name}</p>
-                <img src="https://robohash.org/${kitten.name}?set=set4"></img>
+                <img src="https://robohash.org/${kitten.name}?size=400x400&set=set4"></img>
               </li>
             `
             )}
