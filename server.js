@@ -28,12 +28,11 @@ app.get('/kittens', (req, res, next) => {
 })
 
 /*
-Paste this in the browser terminal:
+Paste this in the browser dev tools' console:
 fetch('/kittens', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({name: 'Collin'}) })
 */
 
 app.post('/kittens', (req, res, next) => {
-  console.log('req.body:', req.body)
   kittens.push({
     id: nextId(kittens),
     name: req.body.name,

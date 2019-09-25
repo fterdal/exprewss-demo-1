@@ -32,15 +32,16 @@ module.exports = function(kittens = []) {
       </body>
       <script>
         const form = document.getElementById('post-mew-kitten')
-        form.onsubmit = event => {
+        form.onsubmit = async event => {
           event.preventDefault()
-          fetch('/kittens', {
+          await fetch('/kittens', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               name: event.target[0].value,
             }),
           })
+          window.location.reload()
         }
       </script>
     </html>
